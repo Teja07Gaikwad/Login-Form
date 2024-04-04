@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <button class="loginbtn" onclick="showform()" type="button">Login</button>
+    <div class="container">
+        <div class="form-box">
+            <span onclick="closeform()" class="closebtn">&times;</span>
+            <h1 id="title">Sign Up</h1>
+            <form >
+                <div class="input-group">
+                    <div class="input-fild">
+                       <input id="namefield" type="text" placeholder="Enter Name"> 
+                    </div>
+                    <div class="input-fild">
+                        <input type="email" placeholder="Enter Email"> 
+                     </div>
+                     <div class="input-fild">
+                        <input type="password" placeholder="Enter Password"> 
+                     </div>
+                     <p><a href="#">Foreget Password</a></p>
+                </div>
+            </form>
+            <div class="btn-field">
+                <button type="button" id="singup-btn">Sign up</button>
+                <button type="button" class="disble" id="singin-btn">Sign In</button>
+                </div>
+        </div>
+    </div>
+    <script>
+        
+        var singupBtn = document.getElementById("singup-btn");
+        var singinBtn = document.getElementById("singin-btn");
+        var namefield = document.getElementById("namefield");
+        var title = document.getElementById("title");
+       
+        singinBtn.onclick = function(){
+            namefield.style.display="none"
+            title.innerHTML="Sing In";
+            singupBtn.classList.add("disble");
+            singinBtn.classList.remove("disble")
+        }  
+        singupBtn.onclick = function(){
+            namefield.style.display="flex"
+            title.innerHTML="Sing Up";
+            singupBtn.classList.remove("disble");
+            singinBtn.classList.add("disble")
+        }  
+        function showform(){
+            document.querySelector('.container').classList.add('showcontainer');
+        }
+        function closeform(){
+            document.querySelector('.container').classList.remove('showcontainer');
+        }
+          </script>
+</body>
+</html>
